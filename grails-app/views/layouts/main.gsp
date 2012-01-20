@@ -13,6 +13,8 @@
         <r:require modules="bootstrap"/>
         <g:layoutHead/>
         <r:layoutResources />
+		
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'twitter.css')}" type="text/css">
         <script type="text/javascript" charset="utf-8">
             $('#my-modal').modal({
               keyboard: true
