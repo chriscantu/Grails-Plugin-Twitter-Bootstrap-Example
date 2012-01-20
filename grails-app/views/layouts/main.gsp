@@ -20,34 +20,19 @@
         </script>
     </head>
     <body>
-        <div class="topbar-wrapper" style="z-index: 5;">
-            <div class="topbar" data-dropdown="dropdown">
-                <div class="topbar-inner">
-                    <div class="container">
-                        <h3><a href="#">Racker Support</a></h3>
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle">Reports</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Requests</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Changes</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Approvals</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="pull-left" action="">
-                            <input type="text" placeholder="Search">
-                        </form>
-                        <ul class="nav">
-                            <li class="active"><a data-controls-modal="my-modal" data-backdrop="true" href="#">New Request</a></li>
-                        </ul>
-                    </div>
-                </div><!-- /topbar-inner -->
-            </div><!-- /topbar -->
-        </div>
+
+        <g:if test="${params.racker}">
+            <!-- Show Racker View -->
+        </g:if>
+        <g:elseif test="${params.manager}">
+            <!-- Show Manager View -->
+        </g:elseif>
+        <g:else>
+            <g:render template="/layouts/support-nav" />
+        </g:else>
+        
+
+
         <div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
         
         <g:layoutBody/>
@@ -56,37 +41,8 @@
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 
         <r:layoutResources />
+
+		<g:render template="/layouts/new-request-modal" />
         
-        <div id="my-modal" class="modal hide fade" style="display: none; ">
-            <g:form name="create-request" controller="request" action="create">
-                <div class="modal-header">
-                    <a href="#" class="close">×</a>
-                    <h3>New Request</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="clearfix">
-                        <label for="normalSelect">Type:</label>
-                        <div class="input">
-                            <g:select name="type" value="${value}" from="${['Incident','Request','Approval']}" noSelection="['':'Select Type']" />
-                        </div>
-                    </div>
-                    <div  class="clearfix">
-                        <label for="xlInput">Subject:</label>
-                        <div  class="input">
-                            <g:textField name="subject" class="xlarge"  />
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                        <label for="textarea">Description:</label>
-                        <div class="input">
-                            <textarea class="xlarge" id="description" name="description" value="" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn primary">Create</button>
-                </div>
-            </div>
-        </g:form>
     </body>
 </html>
