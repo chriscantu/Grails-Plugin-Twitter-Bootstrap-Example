@@ -15,7 +15,16 @@
 				</div>
 				<div class="span12">
 					<g:if test="${flash.message}">
-						<div class="alert-message error" role="status"><strong>${flash.message}</strong></div>
+						<div class="alert-message info" role="status"><strong>${flash.message}</strong></div>
+					</g:if>
+					<g:if test="${flash.success}">
+						<div class="alert-message success" role="status"><strong>${flash.success}</strong></div>
+					</g:if>
+					<g:if test="${flash.error}">
+						<div class="alert-message error" role="status"><strong>${flash.error}</strong></div>
+					</g:if>
+					<g:if test="${flash.warning}">
+						<div class="alert-message warning" role="status"><strong>${flash.warning}</strong></div>
 					</g:if>
 				</div>
 				
@@ -37,34 +46,34 @@
 									<thead>
 										<tr>
 										
-											<g:sortableColumn property="assigned" title="${message(code: 'request.assigned.label', default: 'Assigned')}" />
+											<g:sortableColumn property="type" title="${message(code: 'request.type.label', default: 'Type')}" />
 										
-											<g:sortableColumn property="dateCreated" title="${message(code: 'request.dateCreated.label', default: 'Date Created')}" />
+											<g:sortableColumn property="subject" title="${message(code: 'request.subject.label', default: 'Subject')}" />
 										
 											<g:sortableColumn property="description" title="${message(code: 'request.description.label', default: 'Description')}" />
 										
-											<g:sortableColumn property="lastUpdated" title="${message(code: 'request.lastUpdated.label', default: 'Last Updated')}" />
-										
 											<g:sortableColumn property="status" title="${message(code: 'request.status.label', default: 'Status')}" />
 										
-											<g:sortableColumn property="subject" title="${message(code: 'request.subject.label', default: 'Subject')}" />
+											<g:sortableColumn property="assigned" title="${message(code: 'request.assigned.label', default: 'Assigned')}" />
+										
+											<g:sortableColumn property="dateCreated" title="${message(code: 'request.dateCreated.label', default: 'Date Created')}" />
 										
 										</tr>
 									</thead>
 									<tbody>
 									<g:each in="${requestInstanceList}" status="i" var="requestInstance">
 										
-											<td><g:link action="show" id="${requestInstance.id}">${fieldValue(bean: requestInstance, field: "assigned")}</g:link></td>
+											<td><g:link action="show" id="${requestInstance.id}">${fieldValue(bean: requestInstance, field: "type")}</g:link></td>
 										
-											<td><g:formatDate date="${requestInstance.dateCreated}" /></td>
+											<td>${fieldValue(bean: requestInstance, field: "subject")}</td>
 										
 											<td>${fieldValue(bean: requestInstance, field: "description")}</td>
 										
-											<td><g:formatDate date="${requestInstance.lastUpdated}" /></td>
-										
 											<td>${fieldValue(bean: requestInstance, field: "status")}</td>
 										
-											<td>${fieldValue(bean: requestInstance, field: "subject")}</td>
+											<td>${fieldValue(bean: requestInstance, field: "assigned")}</td>
+										
+											<td><g:formatDate date="${requestInstance.dateCreated}" /></td>
 										
 										</tr>
 									</g:each>

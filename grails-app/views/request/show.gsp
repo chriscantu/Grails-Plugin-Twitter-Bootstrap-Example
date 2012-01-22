@@ -15,7 +15,16 @@
 				</div>
 				<div class="span12">
 					<g:if test="${flash.message}">
-						<div class="alert-message success" role="status"><strong>${flash.message}</strong></div>
+						<div class="alert-message info" role="status"><strong>${flash.message}</strong></div>
+					</g:if>
+					<g:if test="${flash.success}">
+						<div class="alert-message success" role="status"><strong>${flash.success}</strong></div>
+					</g:if>
+					<g:if test="${flash.error}">
+						<div class="alert-message error" role="status"><strong>${flash.error}</strong></div>
+					</g:if>
+					<g:if test="${flash.warning}">
+						<div class="alert-message warning" role="status"><strong>${flash.warning}</strong></div>
 					</g:if>
 				</div>
 			</div>
@@ -32,6 +41,42 @@
 				<div class="content">
 					<div class="row">
 						<div class="span12">
+								
+										<div class="row properties">
+											<g:if test="${requestInstance?.type}">
+												<div id="type-label" class="property-label span3"><g:message code="request.type.label" default="Type" />:</div>
+												
+													<div class="property-value span7" aria-labelledby="type-label"><g:fieldValue bean="${requestInstance}" field="type"/></div>
+												
+											</g:if>
+										</div>
+								
+										<div class="row properties">
+											<g:if test="${requestInstance?.subject}">
+												<div id="subject-label" class="property-label span3"><g:message code="request.subject.label" default="Subject" />:</div>
+												
+													<div class="property-value span7" aria-labelledby="subject-label"><g:fieldValue bean="${requestInstance}" field="subject"/></div>
+												
+											</g:if>
+										</div>
+								
+										<div class="row properties">
+											<g:if test="${requestInstance?.description}">
+												<div id="description-label" class="property-label span3"><g:message code="request.description.label" default="Description" />:</div>
+												
+													<div class="property-value span7" aria-labelledby="description-label"><g:fieldValue bean="${requestInstance}" field="description"/></div>
+												
+											</g:if>
+										</div>
+								
+										<div class="row properties">
+											<g:if test="${requestInstance?.status}">
+												<div id="status-label" class="property-label span3"><g:message code="request.status.label" default="Status" />:</div>
+												
+													<div class="property-value span7" aria-labelledby="status-label"><g:fieldValue bean="${requestInstance}" field="status"/></div>
+												
+											</g:if>
+										</div>
 								
 										<div class="row properties">
 											<g:if test="${requestInstance?.assigned}">
@@ -52,46 +97,10 @@
 										</div>
 								
 										<div class="row properties">
-											<g:if test="${requestInstance?.description}">
-												<div id="description-label" class="property-label span3"><g:message code="request.description.label" default="Description" />:</div>
-												
-													<div class="property-value span7" aria-labelledby="description-label"><g:fieldValue bean="${requestInstance}" field="description"/></div>
-												
-											</g:if>
-										</div>
-								
-										<div class="row properties">
 											<g:if test="${requestInstance?.lastUpdated}">
 												<div id="lastUpdated-label" class="property-label span3"><g:message code="request.lastUpdated.label" default="Last Updated" />:</div>
 												
 													<div class="property-value span7" aria-labelledby="lastUpdated-label"><g:formatDate date="${requestInstance?.lastUpdated}" /></div>
-												
-											</g:if>
-										</div>
-								
-										<div class="row properties">
-											<g:if test="${requestInstance?.status}">
-												<div id="status-label" class="property-label span3"><g:message code="request.status.label" default="Status" />:</div>
-												
-													<div class="property-value span7" aria-labelledby="status-label"><g:fieldValue bean="${requestInstance}" field="status"/></div>
-												
-											</g:if>
-										</div>
-								
-										<div class="row properties">
-											<g:if test="${requestInstance?.subject}">
-												<div id="subject-label" class="property-label span3"><g:message code="request.subject.label" default="Subject" />:</div>
-												
-													<div class="property-value span7" aria-labelledby="subject-label"><g:fieldValue bean="${requestInstance}" field="subject"/></div>
-												
-											</g:if>
-										</div>
-								
-										<div class="row properties">
-											<g:if test="${requestInstance?.type}">
-												<div id="type-label" class="property-label span3"><g:message code="request.type.label" default="Type" />:</div>
-												
-													<div class="property-value span7" aria-labelledby="type-label"><g:fieldValue bean="${requestInstance}" field="type"/></div>
 												
 											</g:if>
 										</div>
