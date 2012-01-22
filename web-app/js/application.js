@@ -1,3 +1,11 @@
+$(document).ready( function($) {
+	
+	$('#my-modal').modal({
+	  keyboard: true,
+	  backdrop: true 
+	});	
+});
+
 if (typeof jQuery !== 'undefined') {
 	(function($) {
 		$('#spinner').ajaxStart(function() {
@@ -8,7 +16,4 @@ if (typeof jQuery !== 'undefined') {
 	})(jQuery);
 }
 
-$('#my-modal').modal({
-  keyboard: true
-})
 
