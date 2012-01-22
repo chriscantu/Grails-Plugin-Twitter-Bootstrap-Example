@@ -10,8 +10,13 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span12 offset4">
+				<div class="span4">
 					<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+				</div>
+				<div class="span12">
+					<g:if test="\${flash.message}">
+						<div class="alert-message success" role="status"><strong>\${flash.message}</strong></div>
+					</g:if>
 				</div>
 			</div>
 			<div class="row">
@@ -27,9 +32,6 @@
 				<div class="content">
 					<div class="row">
 						<div class="span12">
-							<g:if test="\${flash.message}">
-								<div class="message" role="status">\${flash.message}</div>
-							</g:if>
 								<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
 									allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
 									props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) }

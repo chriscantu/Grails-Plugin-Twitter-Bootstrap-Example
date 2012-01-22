@@ -9,8 +9,14 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span4 offset4">
+				<div class="span4">
 					<h1><g:message code="default.create.label" args="[entityName]" /></h1>	
+				</div>
+				<div class="span12">
+					<g:if test="\${flash.message}">
+						<div class="alert-message success" role="status"><strong>\${flash.message}</strong></div>
+					</g:if>
+					
 				</div>
 			</div>
 			<div class="row">

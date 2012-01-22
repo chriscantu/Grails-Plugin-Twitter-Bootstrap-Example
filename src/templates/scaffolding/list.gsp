@@ -10,9 +10,15 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span12 offset4">
+				<div class="span4">
 					<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 				</div>
+				<div class="span12">
+					<g:if test="\${flash.message}">
+						<div class="alert-message error" role="status"><strong>\${flash.message}</strong></div>
+					</g:if>
+				</div>
+				
 			</div>
 			<div class="row">
 				<div class="sidebar span4">
@@ -27,9 +33,6 @@
 					<div class="row">
 						<div class="span12">
 							<div id="list-${domainClass.propertyName}" class="content scaffold-list" role="main">
-								<g:if test="\${flash.message}">
-								<div class="message" role="status">\${flash.message}</div>
-								</g:if>
 								<table class="zebra-striped bordered-table">
 									<thead>
 										<tr>
