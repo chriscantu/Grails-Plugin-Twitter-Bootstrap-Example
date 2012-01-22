@@ -27,3 +27,7 @@ span.currentStep {
 	display: block;
 	margin-left: 27%;
 }
+div.edit-properties.error > input {
+	border-color: #E9322D;
+}
+
