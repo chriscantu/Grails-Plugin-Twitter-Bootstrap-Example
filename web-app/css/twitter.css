@@ -7,3 +7,23 @@ span.currentStep {
 	border-right-color: rgba(0, 0, 0, 0.15);
 	text-decoration: none;
 }
+.row .properties {
+	height: 35px;
+}
+
+.row .edit-properties {
+	height: 35px;
+}
+
+.property-label {
+	color: #666666;
+	text-align: left;
+	width: 25%;
+	float: left;
+	font-weight: bold;
+}
+
+.fieldcontain .property-value {
+	display: block;
+	margin-left: 27%;
+}
