@@ -21,7 +21,7 @@
                     <input type="text" placeholder="Search">
                 </form>
                 <ul class="nav">
-                    <li class="active"><a data-controls-modal="my-modal" data-backdrop="true" href="#">New Request</a></li>
+                    <li class="active"><a data-controls-modal="my-modal" data-backdrop="true" data-keyboard="true" data-controls-modal="modal-from-dom" href="#">New Request</a></li>
                 </ul>
             </div>
         </div><!-- /topbar-inner -->
