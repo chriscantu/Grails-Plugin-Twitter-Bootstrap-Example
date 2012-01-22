@@ -7,3 +7,8 @@ if (typeof jQuery !== 'undefined') {
 		});
 	})(jQuery);
 }
+
+$('#my-modal').modal({
+  keyboard: true
+})
+

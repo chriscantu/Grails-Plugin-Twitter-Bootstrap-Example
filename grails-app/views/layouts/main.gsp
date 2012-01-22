@@ -15,11 +15,7 @@
         <r:layoutResources />
 		
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'twitter.css')}" type="text/css">
-        <script type="text/javascript" charset="utf-8">
-            $('#my-modal').modal({
-              keyboard: true
-            })
-        </script>
+		<script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
     </head>
     <body>
 
