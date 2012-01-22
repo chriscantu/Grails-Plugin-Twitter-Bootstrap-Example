@@ -7,7 +7,7 @@ class RequestController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-
+        redirect(action: "list", params: params)
     }
 
     def list() {
@@ -26,14 +26,14 @@ class RequestController {
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'request.label', default: 'Request'), requestInstance.id])
+		flash.success = message(code: 'default.created.message', args: [message(code: 'request.label', default: 'Request'), requestInstance.id])
         redirect(action: "show", id: requestInstance.id)
     }
 
     def show() {
         def requestInstance = Request.get(params.id)
         if (!requestInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+			flash.error = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "list")
             return
         }
@@ -44,7 +44,7 @@ class RequestController {
     def edit() {
         def requestInstance = Request.get(params.id)
         if (!requestInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+            flash.error = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "list")
             return
         }
@@ -55,7 +55,7 @@ class RequestController {
     def update() {
         def requestInstance = Request.get(params.id)
         if (!requestInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+            flash.error = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "list")
             return
         }
@@ -78,25 +78,25 @@ class RequestController {
             return
         }
 
-		flash.message = message(code: 'default.updated.message', args: [message(code: 'request.label', default: 'Request'), requestInstance.id])
+		flash.success = message(code: 'default.updated.message', args: [message(code: 'request.label', default: 'Request'), requestInstance.id])
         redirect(action: "show", id: requestInstance.id)
     }
 
     def delete() {
         def requestInstance = Request.get(params.id)
         if (!requestInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+			flash.error = message(code: 'default.not.found.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "list")
             return
         }
 
         try {
             requestInstance.delete(flush: true)
-			flash.message = message(code: 'default.deleted.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+			flash.success = message(code: 'default.deleted.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'request.label', default: 'Request'), params.id])
+			flash.error = message(code: 'default.not.deleted.message', args: [message(code: 'request.label', default: 'Request'), params.id])
             redirect(action: "show", id: params.id)
         }
     }

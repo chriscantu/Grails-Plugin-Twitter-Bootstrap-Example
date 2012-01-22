@@ -14,9 +14,17 @@
 				</div>
 				<div class="span12">
 					<g:if test="\${flash.message}">
-						<div class="alert-message success" role="status"><strong>\${flash.message}</strong></div>
+						<div class="alert-message info" role="status"><strong>\${flash.message}</strong></div>
 					</g:if>
-					
+					<g:if test="\${flash.success}">
+						<div class="alert-message success" role="status"><strong>\${flash.success}</strong></div>
+					</g:if>
+					<g:if test="\${flash.error}">
+						<div class="alert-message error" role="status"><strong>\${flash.error}</strong></div>
+					</g:if>
+					<g:if test="\${flash.warning}">
+						<div class="alert-message warning" role="status"><strong>\${flash.warning}</strong></div>
+					</g:if>
 				</div>
 			</div>
 			<div class="row">
@@ -31,15 +39,14 @@
 			<div class="content">
 				<div class="row">
 					<div id="create-${domainClass.propertyName}" class="span12" role="main">
-						<g:if test="\${flash.message}">
-							<div class="message" role="status">\${flash.message}</div>
-						</g:if>
 						<g:hasErrors bean="\${${propertyName}}">
-						<ul class="errors" role="alert">
-							<g:eachError bean="\${${propertyName}}" var="error">
-							<li <g:if test="\${error in org.springframework.validation.FieldError}">data-field-id="\${error.field}"</g:if>><g:message error="\${error}"/></li>
-							</g:eachError>
-						</ul>
+						<div class="alert-message block-message error">
+							<ul class="errors" role="alert">
+								<g:eachError bean="\${${propertyName}}" var="error">
+								<li <g:if test="\${error in org.springframework.validation.FieldError}">data-field-id="\${error.field}"</g:if>><g:message error="\${error}"/></li>
+								</g:eachError>
+							</ul>
+						</div>
 						</g:hasErrors>
 						<g:form action="save" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
 							

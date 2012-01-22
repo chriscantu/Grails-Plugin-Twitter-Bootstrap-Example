@@ -11,5 +11,10 @@ class Request {
 	Date lastUpdated
 
     static constraints = {
+		type blank:false
+		subject blank:false
+		description blank:false
+		status blank:false
+		assigned blank:false
     }
 }
