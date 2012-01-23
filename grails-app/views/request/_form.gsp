@@ -31,7 +31,7 @@
 		<g:message code="request.status.label" default="Status" />:
 		<span class="required-indicator">*</span>
 	</div>
-	<g:textField name="status" required="" value="${requestInstance?.status}"/>
+	<g:select name="status" from="${com.rackspace.Status?.values()}" keys="${com.rackspace.Status.values()*.name()}" required="" value="${requestInstance?.status?.name()}"/>
 </div>
 
 <div class="row edit-properties fieldcontain ${hasErrors(bean: requestInstance, field: 'assigned', 'error')} required">
@@ -39,6 +39,6 @@
 		<g:message code="request.assigned.label" default="Assigned" />:
 		<span class="required-indicator">*</span>
 	</div>
-	<g:textField name="assigned" required="" value="${requestInstance?.assigned}"/>
+	<g:select id="assigned" name="assigned.id" from="${com.rackspace.User.list()}" optionKey="id" required="" value="${requestInstance?.assigned?.id}" class="many-to-one"/>
 </div>
 

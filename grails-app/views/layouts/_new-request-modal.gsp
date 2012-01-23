@@ -1,5 +1,5 @@
 <div id="my-modal" class="modal hide fade" style="display: none; ">
-    <g:form name="create-request" controller="request" action="create">
+    <g:form name="create-request" controller="request" action="save">
         <div class="modal-header">
             <a href="#" class="close">×</a>
             <h3>New Request</h3>
@@ -23,9 +23,9 @@
                     <textarea class="xlarge" id="description" name="description" value="" rows="3"></textarea>
                 </div>
             </div>
-        </div>
         <div class="modal-footer">
             <button type="submit" class="btn primary">Create</button>
         </div>
-    </div>
-</g:form>
+	</g:form>
+</div>
+

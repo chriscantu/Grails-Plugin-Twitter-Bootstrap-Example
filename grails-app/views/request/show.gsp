@@ -82,7 +82,7 @@
 											<g:if test="${requestInstance?.assigned}">
 												<div id="assigned-label" class="property-label span3"><g:message code="request.assigned.label" default="Assigned" />:</div>
 												
-													<div class="property-value span7" aria-labelledby="assigned-label"><g:fieldValue bean="${requestInstance}" field="assigned"/></div>
+													<div class="property-value span7" aria-labelledby="assigned-label"><g:link controller="user" action="show" id="${requestInstance?.assigned?.id}">${requestInstance?.assigned?.encodeAsHTML()}</g:link></div>
 												
 											</g:if>
 										</div>

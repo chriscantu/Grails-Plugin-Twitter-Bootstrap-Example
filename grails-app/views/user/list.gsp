@@ -1,10 +1,10 @@
 
-<%@ page import="com.rackspace.Request" %>
+<%@ page import="com.rackspace.User" %>
 <!doctype html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'request.label', default: 'Request')}" />
+		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -41,46 +41,34 @@
 				<div class="content">
 					<div class="row">
 						<div class="span12">
-							<div id="list-request" class="content scaffold-list" role="main">
+							<div id="list-user" class="content scaffold-list" role="main">
 								<table class="zebra-striped bordered-table">
 									<thead>
 										<tr>
 										
-											<g:sortableColumn property="type" title="${message(code: 'request.type.label', default: 'Type')}" />
+											<g:sortableColumn property="firstName" title="${message(code: 'user.firstName.label', default: 'First Name')}" />
 										
-											<g:sortableColumn property="subject" title="${message(code: 'request.subject.label', default: 'Subject')}" />
+											<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Last Name')}" />
 										
-											<g:sortableColumn property="description" title="${message(code: 'request.description.label', default: 'Description')}" />
-										
-											<g:sortableColumn property="status" title="${message(code: 'request.status.label', default: 'Status')}" />
-										
-											<th><g:message code="request.assigned.label" default="Assigned" /></th>
-										
-											<g:sortableColumn property="dateCreated" title="${message(code: 'request.dateCreated.label', default: 'Date Created')}" />
+											<g:sortableColumn property="title" title="${message(code: 'user.title.label', default: 'Title')}" />
 										
 										</tr>
 									</thead>
 									<tbody>
-									<g:each in="${requestInstanceList}" status="i" var="requestInstance">
+									<g:each in="${userInstanceList}" status="i" var="userInstance">
 										
-											<td><g:link action="show" id="${requestInstance.id}">${fieldValue(bean: requestInstance, field: "type")}</g:link></td>
+											<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "firstName")}</g:link></td>
 										
-											<td>${fieldValue(bean: requestInstance, field: "subject")}</td>
+											<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
 										
-											<td>${fieldValue(bean: requestInstance, field: "description")}</td>
-										
-											<td>${fieldValue(bean: requestInstance, field: "status")}</td>
-										
-											<td>${fieldValue(bean: requestInstance, field: "assigned")}</td>
-										
-											<td><g:formatDate date="${requestInstance.dateCreated}" /></td>
+											<td>${fieldValue(bean: userInstance, field: "title")}</td>
 										
 										</tr>
 									</g:each>
 									</tbody>
 								</table>
 								<div class="pagination">
-									<g:paginate total="${requestInstanceTotal}" />
+									<g:paginate total="${userInstanceTotal}" />
 								</div>
 							</div>
 						</div>

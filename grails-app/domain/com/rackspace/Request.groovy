@@ -5,8 +5,8 @@ class Request {
 	String type
 	String subject
 	String description
-	String status
-	String assigned
+	Status status = Status.UNASSIGNED
+	User assigned
 	Date dateCreated
 	Date lastUpdated
 
@@ -14,7 +14,6 @@ class Request {
 		type blank:false
 		subject blank:false
 		description blank:false
-		status blank:false
-		assigned blank:false
+		assigned nullable:true
     }
 }
