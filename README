@@ -1,0 +1,3 @@
+Here is an example application which modifies Grails default scaffolding to leverage Twitter Bootstrap instead.  
+
+This application can be used as launching point for other grails applications which want to use Twitter Bootstrap.  
