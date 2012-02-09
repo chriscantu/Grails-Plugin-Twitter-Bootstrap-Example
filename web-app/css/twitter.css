@@ -40,6 +40,10 @@ span.currentStep {
 	border-left-width: 0;
 }
 
+.top-align {
+	vertical-align: top;
+}
+
 div.edit-properties.error > input { border-color: #E9322D; }
 div.edit-properties.error > select { border-color: #E9322D; }
 div.edit-properties.error > textarea { border-color: #E9322D; }
