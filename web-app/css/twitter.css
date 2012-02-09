@@ -28,6 +28,18 @@ span.currentStep {
 	margin-left: 27%;
 }
 
+.pagination span.currentStep {
+	color: #999;
+	cursor: default;
+	background-color: whiteSmoke;	
+	float: left;
+	padding: 0 14px;
+	line-height: 34px;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-left-width: 0;
+}
+
 div.edit-properties.error > input { border-color: #E9322D; }
 div.edit-properties.error > select { border-color: #E9322D; }
 div.edit-properties.error > textarea { border-color: #E9322D; }

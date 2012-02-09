@@ -70,15 +70,6 @@
 										</div>
 								
 										<div class="row properties">
-											<g:if test="${requestInstance?.status}">
-												<div id="status-label" class="property-label span3"><g:message code="request.status.label" default="Status" />:</div>
-												
-													<div class="property-value span7" aria-labelledby="status-label"><g:fieldValue bean="${requestInstance}" field="status"/></div>
-												
-											</g:if>
-										</div>
-								
-										<div class="row properties">
 											<g:if test="${requestInstance?.assigned}">
 												<div id="assigned-label" class="property-label span3"><g:message code="request.assigned.label" default="Assigned" />:</div>
 												
@@ -101,6 +92,15 @@
 												<div id="lastUpdated-label" class="property-label span3"><g:message code="request.lastUpdated.label" default="Last Updated" />:</div>
 												
 													<div class="property-value span7" aria-labelledby="lastUpdated-label"><g:formatDate date="${requestInstance?.lastUpdated}" /></div>
+												
+											</g:if>
+										</div>
+								
+										<div class="row properties">
+											<g:if test="${requestInstance?.status}">
+												<div id="status-label" class="property-label span3"><g:message code="request.status.label" default="Status" />:</div>
+												
+													<div class="property-value span7" aria-labelledby="status-label"><g:fieldValue bean="${requestInstance}" field="status"/></div>
 												
 											</g:if>
 										</div>

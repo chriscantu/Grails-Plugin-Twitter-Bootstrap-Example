@@ -29,10 +29,6 @@
             <g:render template="/layouts/support-nav" />
         </g:else>
         
-
-
-        <div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-        
         <g:layoutBody/>
         
         <div class="footer" role="contentinfo"></div>

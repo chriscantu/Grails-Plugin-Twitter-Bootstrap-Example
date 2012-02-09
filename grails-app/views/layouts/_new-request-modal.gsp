@@ -1,4 +1,4 @@
-<div id="my-modal" class="modal hide fade" style="display: none; ">
+<div id="my-modal" class="modal fade" style="display: none; ">
     <g:form name="create-request" controller="request" action="save">
         <div class="modal-header">
             <a href="#" class="close">×</a>

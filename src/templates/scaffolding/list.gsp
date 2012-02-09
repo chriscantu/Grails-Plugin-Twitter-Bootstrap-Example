@@ -10,10 +10,10 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="span3">
 					<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 				</div>
-				<div class="span12">
+				<div class="span8">
 					<g:if test="\${flash.message}">
 						<div class="alert-message info" role="status"><strong>\${flash.message}</strong></div>
 					</g:if>
@@ -30,19 +30,19 @@
 				
 			</div>
 			<div class="row">
-				<div class="sidebar span4">
+				<div class="sidebar span3">
 					<div class="well" role="navigation">
-						<ul>
-							<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+						<ul class="nav nav-list">
+							<li><a class="home" href="\${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
+							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
 					</div>
 				</div>
 				<div class="content">
 					<div class="row">
-						<div class="span12">
+						<div class="span8">
 							<div id="list-${domainClass.propertyName}" class="content scaffold-list" role="main">
-								<table class="zebra-striped bordered-table">
+								<table class="table table-striped table-bordered">
 									<thead>
 										<tr>
 										<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'

@@ -26,19 +26,19 @@
 	<g:textField name="description" required="" value="${requestInstance?.description}"/>
 </div>
 
+<div class="row edit-properties fieldcontain ${hasErrors(bean: requestInstance, field: 'assigned', 'error')} ">
+	<div class="property-label span3" for="assigned">
+		<g:message code="request.assigned.label" default="Assigned" />:
+		
+	</div>
+	<g:select id="assigned" name="assigned.id" from="${com.rackspace.User.list()}" optionKey="id" value="${requestInstance?.assigned?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
 <div class="row edit-properties fieldcontain ${hasErrors(bean: requestInstance, field: 'status', 'error')} required">
 	<div class="property-label span3" for="status">
 		<g:message code="request.status.label" default="Status" />:
 		<span class="required-indicator">*</span>
 	</div>
 	<g:select name="status" from="${com.rackspace.Status?.values()}" keys="${com.rackspace.Status.values()*.name()}" required="" value="${requestInstance?.status?.name()}"/>
-</div>
-
-<div class="row edit-properties fieldcontain ${hasErrors(bean: requestInstance, field: 'assigned', 'error')} required">
-	<div class="property-label span3" for="assigned">
-		<g:message code="request.assigned.label" default="Assigned" />:
-		<span class="required-indicator">*</span>
-	</div>
-	<g:select id="assigned" name="assigned.id" from="${com.rackspace.User.list()}" optionKey="id" required="" value="${requestInstance?.assigned?.id}" class="many-to-one"/>
 </div>
 

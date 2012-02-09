@@ -1,9 +1,5 @@
 $(document).ready( function($) {
 	
-	$('#my-modal').modal({
-	  keyboard: true,
-	  backdrop: true 
-	});	
 });
 
 if (typeof jQuery !== 'undefined') {
