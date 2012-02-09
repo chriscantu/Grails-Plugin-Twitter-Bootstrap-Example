@@ -13,7 +13,7 @@
 				<div class="span3">
 					<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 				</div>
-				<div class="span8">
+				<div class="span9">
 					<g:if test="${flash.message}">
 						<div class="alert-message info" role="status"><strong>${flash.message}</strong></div>
 					</g:if>
@@ -33,6 +33,7 @@
 				<div class="sidebar span3">
 					<div class="well" role="navigation">
 						<ul class="nav nav-list">
+							<li class="nav-header">Options</li>
 							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
 							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
@@ -40,7 +41,7 @@
 				</div>
 				<div class="content">
 					<div class="row">
-						<div class="span8">
+						<div class="span9">
 							<div id="list-request" class="content scaffold-list" role="main">
 								<table class="table table-striped table-bordered">
 									<thead>

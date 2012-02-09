@@ -9,10 +9,10 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="span3">
 					<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 				</div>
-				<div class="span12">
+				<div class="span9">
 					<g:if test="${flash.message}">
 						<div class="alert-message info" role="status"><strong>${flash.message}</strong></div>
 					</g:if>
@@ -28,18 +28,18 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="sidebar span4">
+				<div class="sidebar span3">
 					<div class="well" role="navigation">
-						<ul>
-							<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-							<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+						<ul class="nav nav-list">
+							<li class="nav-header">Options</li>
+							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
+							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
 					</div>
 				</div>
 				<div class="content">
 					<div class="row">						
-						<div id="edit-request" class="span12" role="main">
+						<div id="edit-request" class="span9" role="main">
 							<g:hasErrors bean="${requestInstance}">
 							<div class="alert-message block-message error">
 								<ul class="errors" role="alert">
@@ -57,8 +57,8 @@
 									<g:render template="form"/>
 
 								<fieldset class="buttons">
-									<g:actionSubmit class="btn primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-									<g:actionSubmit class="btn danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									<g:actionSubmit class="btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+									<g:actionSubmit class="btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
 							</g:form>
 						</div>
