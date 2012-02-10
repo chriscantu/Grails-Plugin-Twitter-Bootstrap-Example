@@ -50,19 +50,19 @@
 											<g:if test="\${${propertyName}?.${p.name}}">
 												<div id="${p.name}-label" class="property-label span3"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" />:</div>
 												<%  if (p.isEnum()) { %>
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></div>
 												<%  } else if (p.oneToMany || p.manyToMany) { %>
 													<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></div>
 													</g:each>
 												<%  } else if (p.manyToOne || p.oneToOne) { %>
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></div>
 												<%  } else if (p.type == Boolean || p.type == boolean) { %>
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:formatBoolean boolean="\${${propertyName}?.${p.name}}" /></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:formatBoolean boolean="\${${propertyName}?.${p.name}}" /></div>
 												<%  } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:formatDate date="\${${propertyName}?.${p.name}}" /></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:formatDate date="\${${propertyName}?.${p.name}}" /></div>
 												<%  } else if(!p.type.isArray()) { %>
-													<div class="property-value span5" aria-labelledby="${p.name}-label"><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></div>
+													<div class="property-value span4" aria-labelledby="${p.name}-label"><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></div>
 												<%  } %>
 											</g:if>
 										</div>
@@ -70,8 +70,8 @@
 							<g:form>
 								<p>
 									<g:hiddenField name="id" value="\${${propertyName}?.id}" />
-									<g:link action="edit" id="\${${propertyName}?.id}" class="btn btn-primary top-align"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-									<g:actionSubmit class="btn-danger" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									<g:link action="edit" id="\${${propertyName}?.id}" class="btn btn-primary top-align"><i class="icon-pencil icon-white"> </i> <g:message code="default.button.edit.label" default="Edit" /></g:link>
+									<button type="submit" class="btn btn-danger" name="_action_delete" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><i class="icon-trash icon-white"></i> \${message(code: 'default.button.delete.label', default: 'Delete')}</button>
 								</p>
 							</g:form>
 						</div>

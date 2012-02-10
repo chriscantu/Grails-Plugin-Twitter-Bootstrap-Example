@@ -56,9 +56,11 @@
 
 									<g:render template="form"/>
 
-								<fieldset class="buttons">
-									<g:actionSubmit class="btn-primary" action="update" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
-									<g:actionSubmit class="btn-danger" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+								<fieldset class="buttons">									
+									<button type="submit" class="btn btn-primary" name="_action_update"><i class="icon-pencil icon-white"></i> \${message(code: 'default.button.update.label', default: 'Update')}</button>
+									
+									
+									<button type="submit" class="btn btn-danger" name="_action_delete" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><i class="icon-trash icon-white"></i> \${message(code: 'default.button.delete.label', default: 'Delete')}</button>
 								</fieldset>
 							</g:form>
 						</div>
