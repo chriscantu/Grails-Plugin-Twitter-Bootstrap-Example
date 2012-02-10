@@ -10,39 +10,40 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="span3">
 					<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 				</div>
-				<div class="span12">
+				<div class="span9">
 					<g:if test="${flash.message}">
-						<div class="alert-message info" role="status"><strong>${flash.message}</strong></div>
+						<div class="alert alert-info" role="status"><strong>${flash.message}</strong></div>
 					</g:if>
 					<g:if test="${flash.success}">
-						<div class="alert-message success" role="status"><strong>${flash.success}</strong></div>
+						<div class="alert alert-success" role="status"><strong>${flash.success}</strong></div>
 					</g:if>
 					<g:if test="${flash.error}">
-						<div class="alert-message error" role="status"><strong>${flash.error}</strong></div>
+						<div class="alert alert-error" role="status"><strong>${flash.error}</strong></div>
 					</g:if>
 					<g:if test="${flash.warning}">
-						<div class="alert-message warning" role="status"><strong>${flash.warning}</strong></div>
+						<div class="alert alert-warning" role="status"><strong>${flash.warning}</strong></div>
 					</g:if>
 				</div>
 				
 			</div>
 			<div class="row">
-				<div class="sidebar span4">
+				<div class="sidebar span3">
 					<div class="well" role="navigation">
-						<ul>
-							<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+						<ul class="nav nav-list">
+							<li class="nav-header">Options</li>
+							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
+							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
 					</div>
 				</div>
 				<div class="content">
 					<div class="row">
-						<div class="span12">
+						<div class="span9">
 							<div id="list-user" class="content scaffold-list" role="main">
-								<table class="zebra-striped bordered-table">
+								<table class="table table-striped table-bordered">
 									<thead>
 										<tr>
 										
@@ -68,7 +69,7 @@
 									</tbody>
 								</table>
 								<div class="pagination">
-									<g:paginate total="${userInstanceTotal}" />
+									<rs:paginate total="${userInstanceTotal}" />
 								</div>
 							</div>
 						</div>
