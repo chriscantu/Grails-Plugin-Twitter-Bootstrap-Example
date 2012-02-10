@@ -34,8 +34,8 @@
 					<div class="well" role="navigation">
 						<ul class="nav nav-list">
 							<li class="nav-header">Options</li>
-							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
-							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i> <g:message code="default.list.label" args="[entityName]"/></a></li>
+							<li><g:link class="create" action="create"><i class="icon-file"></i> <g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
 					</div>
 				</div>
