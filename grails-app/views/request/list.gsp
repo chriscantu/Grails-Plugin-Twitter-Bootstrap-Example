@@ -81,7 +81,7 @@
 									</tbody>
 								</table>
 								<div class="pagination">
-									<g:paginate total="${requestInstanceTotal}" />
+									<rs:paginate total="${requestInstanceTotal}" />
 								</div>
 							</div>
 						</div>
