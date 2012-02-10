@@ -58,7 +58,7 @@ class PaginateTagLib {
             linkParams.offset = offset - max
 			writer << "<li>"
             writer << link(linkTagAttrs.clone()) {
-                (attrs.prev ?: messageSource.getMessage('paginate.prev', null, messageSource.getMessage('default.paginate.prev', null, 'Previous', locale), locale))
+                (attrs.prev ?: '←'  )
             }
 			writer << "</li>"
         }
@@ -119,7 +119,7 @@ class PaginateTagLib {
             linkParams.offset = offset + max
 			writer << "<li>"
             writer << link(linkTagAttrs.clone()) {
-                (attrs.next ? attrs.next : messageSource.getMessage('paginate.next', null, messageSource.getMessage('default.paginate.next', null, 'Next', locale), locale))
+                (attrs.next ? attrs.next : '→' )
             }
 			writer << "</li>"
         }
