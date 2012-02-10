@@ -77,7 +77,7 @@
 									</tbody>
 								</table>
 								<div class="pagination">
-									<g:paginate total="\${${propertyName}Total}" />
+									<rs:paginate total="\${${propertyName}Total}" />
 								</div>
 							</div>
 						</div>
