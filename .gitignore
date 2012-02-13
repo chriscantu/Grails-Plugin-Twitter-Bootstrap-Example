@@ -3,3 +3,4 @@ target/
 .project
 .settings/
 *.war
+stacktrace.log
