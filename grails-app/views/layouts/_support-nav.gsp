@@ -1,18 +1,18 @@
 <div class="navbar">
 	<div class="navbar-inner">
     	<div class="container" >
-        	<a class="brand" href="#">Rackspace Support</a>
+        	<a class="brand" href="${createLink(uri: '/')}">Rackspace Support</a>
         	<div class="nav-collapse">
           		<ul class="nav">
-            		<li class="active"><a href="#">Home</a></li>
+            		<li class="active"><a href="${createLink(uri: '/')}">Home</a></li>
             		<li class="dropdown">
 	              	  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Incident</a></li>
+							<li><a href="${createLink(action: 'list', controller: 'request' )}">Incident</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Change</a></li>
+							<li><a href="${createLink(action: 'list', controller: 'request' )}">Change</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Approval</a></li>
+							<li><a href="${createLink(action: 'list', controller: 'request' )}">Approval</a></li>
 						</ul>
             		</li>
 					<li><a data-toggle="modal" href="#my-modal" >New Request</a></li>
