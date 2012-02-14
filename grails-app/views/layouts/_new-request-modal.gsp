@@ -2,7 +2,7 @@
     <g:form name="create-request" controller="request" action="save">
 		<fieldset>
 	        <div class="modal-header">
-	            <a href="#" class="close">×</a>
+	            <a class="close" data-dismiss="modal">×</a>
 	            <h3>New Request</h3>
 	        </div>
 	        <div class="modal-body">
