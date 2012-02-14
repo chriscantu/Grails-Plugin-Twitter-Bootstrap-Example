@@ -33,8 +33,8 @@
 					<div class="well" role="navigation">
 						<ul class="nav nav-list">
 							<li class="nav-header">Options</li>
-							<li><a class="home" href="${createLink(uri: '/')}"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]"/></a></li>
-							<li><g:link class="create" action="create"><i class="icon-file"></i><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+							<li><a class="home" href="${createLink(action: 'list')}"><i class="icon-list"></i> <g:message code="default.list.label" args="[entityName]"/></a></li>
+							<li><g:link class="create" action="create"><i class="icon-file"></i> <g:message code="default.new.label" args="[entityName]" /></g:link></li>
 						</ul>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 											<g:if test="${userInstance?.firstName}">
 												<div id="firstName-label" class="property-label span3"><g:message code="user.firstName.label" default="First Name" />:</div>
 												
-													<div class="property-value span5" aria-labelledby="firstName-label"><g:fieldValue bean="${userInstance}" field="firstName"/></div>
+													<div class="property-value span4" aria-labelledby="firstName-label"><g:fieldValue bean="${userInstance}" field="firstName"/></div>
 												
 											</g:if>
 										</div>
@@ -55,7 +55,7 @@
 											<g:if test="${userInstance?.lastName}">
 												<div id="lastName-label" class="property-label span3"><g:message code="user.lastName.label" default="Last Name" />:</div>
 												
-													<div class="property-value span5" aria-labelledby="lastName-label"><g:fieldValue bean="${userInstance}" field="lastName"/></div>
+													<div class="property-value span4" aria-labelledby="lastName-label"><g:fieldValue bean="${userInstance}" field="lastName"/></div>
 												
 											</g:if>
 										</div>
@@ -64,7 +64,7 @@
 											<g:if test="${userInstance?.title}">
 												<div id="title-label" class="property-label span3"><g:message code="user.title.label" default="Title" />:</div>
 												
-													<div class="property-value span5" aria-labelledby="title-label"><g:fieldValue bean="${userInstance}" field="title"/></div>
+													<div class="property-value span4" aria-labelledby="title-label"><g:fieldValue bean="${userInstance}" field="title"/></div>
 												
 											</g:if>
 										</div>
@@ -72,8 +72,8 @@
 							<g:form>
 								<p>
 									<g:hiddenField name="id" value="${userInstance?.id}" />
-									<g:link action="edit" id="${userInstance?.id}" class="btn btn-primary top-align"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-									<g:actionSubmit class="btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									<g:link action="edit" id="${userInstance?.id}" class="btn btn-primary top-align"><i class="icon-pencil icon-white"> </i> <g:message code="default.button.edit.label" default="Edit" /></g:link>
+									<button type="submit" class="btn btn-danger" name="_action_delete" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><i class="icon-trash icon-white"></i> ${message(code: 'default.button.delete.label', default: 'Delete')}</button>
 								</p>
 							</g:form>
 						</div>
